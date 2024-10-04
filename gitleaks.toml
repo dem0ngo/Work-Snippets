@@ -1,0 +1,66 @@
+[allowlist]
+description = "Global allowlist"
+paths = [
+    '''.*test.*''',
+    '''.*mock.*'''
+]
+
+[[rules]]
+id = "splunk-hec-token"
+description = "Detect Splunk HEC token"
+regex = '''(?i)splunk.*token'''
+tags = ["splunk", "logging"]
+
+[[rules]]
+id = "logging-best-practices"
+description = "Ensure proper logging practices"
+regex = '''(?i)(log\.(?:info|error|warn|debug)|logger\.(?:info|error|warn|debug))'''
+tags = ["logging", "best-practice"]
+
+[[rules]]
+id = "console-output-detection"
+description = "Detect potential console output or logging in production code"
+regex = '''(?i)(console\.(log|error|warn|info|debug)|print[f]?[\s]*\(|println[\s]*\(|System\.(out|err)\.print(ln)?|NSLog\(|cout\s*<<|printf[\s]*\(|puts[\s]*\(|echo[\s]+|Logger\.(debug|info|warn|error)|log\.(debug|info|warn|error))'''
+tags = ["production", "console", "logging"]
+
+[[rules]]
+id = "logging-configuration"
+description = "Detect logging configuration"
+regex = '''(?i)(log4j\.properties|logback\.xml|logging\.properties)'''
+tags = ["logging", "configuration"]
+
+[[rules]]
+id = "sensitive-log-content"
+description = "Detect potentially sensitive information in logs"
+regex = '''(?i)(password|secret|key|token|credential).*log'''
+tags = ["logging", "sensitive"]
+
+[[rules]]
+id = "elk-stack-keywords"
+description = "Detect ELK stack related keywords"
+regex = '''(?i)(elasticsearch|logstash|kibana|beats)'''
+tags = ["logging", "elk"]
+
+[[rules]]
+id = "logging-levels"
+description = "Ensure proper use of logging levels"
+regex = '''(?i)log\.(?:trace|debug|info|warn|error|fatal)'''
+tags = ["logging", "levels"]
+
+[[rules]]
+id = "log-injection"
+description = "Detect potential log injection vulnerabilities"
+regex = '''(?i)log.*\+.*(?:variable|input|param)'''
+tags = ["logging", "security"]
+
+[[rules]]
+id = "hardcoded-log-paths"
+description = "Detect hardcoded log file paths"
+regex = '''(?i)(?:log|output).*file.*=.*['"]/'''
+tags = ["logging", "configuration"]
+
+[[rules]]
+id = "logging-frameworks"
+description = "Detect common logging frameworks"
+regex = '''(?i)(log4j|slf4j|logback|commons-logging)'''
+tags = ["logging", "framework"]
