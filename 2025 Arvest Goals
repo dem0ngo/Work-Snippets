@@ -1,0 +1,44 @@
+Epic 1: Implement Vulnerability Scanning in Merge Requests
+Stories:
+
+    Integrate Snyk with GitLab CI/CD pipeline
+    Configure GitLab to display vulnerability scan results in MR notes
+    Create a custom template for vulnerability reporting in MR notes
+    Implement severity-based highlighting for vulnerabilities
+    Set up automated notifications for critical vulnerabilities
+
+Epic 2: Enhance Logging Practices Visibility in Merge Requests
+Stories:
+
+    Develop a log analysis tool to evaluate logging practices
+    Integrate the log analysis tool with GitLab CI/CD pipeline
+    Design a user-friendly format for displaying logging feedback in MR notes
+    Implement color-coding for good and bad logging practices
+    Create documentation on best logging practices for developers
+
+Epic 3: Shift Left Security Initiative
+Stories:
+
+    Conduct security awareness training for development teams
+    Implement pre-commit hooks for basic security checks
+    Create a security checklist for developers to use during coding
+    Develop and distribute secure coding guidelines
+    Integrate security tools into developers' IDEs
+
+Epic 4: Implement Security Status Badges for GitLab Repositories
+Stories:
+
+    Design badge system for vulnerability status
+    Develop scripts to generate badges based on security scan results
+    Integrate badge generation into CI/CD pipeline
+    Implement badge display for repositories, commits, and tags
+    Create documentation on badge meanings and how to improve security status
+
+Epic 5: Incorporate Log Verifier Job in PRR (Project Review Report)
+Stories:
+
+    Develop a log verification tool
+    Integrate log verifier into the existing PRR generation process
+    Design a section in the PRR to display logging practice results
+    Implement severity-based categorization for logging issues
+    Create guidelines for interpreting and acting on log verifier results
